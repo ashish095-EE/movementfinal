@@ -3,6 +3,7 @@ using UnityEngine;
 public class Collision_Drop : MonoBehaviour
 {
     public movemntarrows movement;
+    public movemntwasd movementw;
     void OnCollisionEnter2D(Collision2D other)
     {
         if(other.collider.tag=="Platform"){
@@ -10,6 +11,8 @@ public class Collision_Drop : MonoBehaviour
         }
         else if(other.collider.tag=="Aterritory"){
             movement.enabled=false;
+            movementw.enabled=false;
+            Destroy(other.gameObject);
         }
     }
 }
